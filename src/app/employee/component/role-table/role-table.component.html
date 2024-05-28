@@ -1,0 +1,42 @@
+<table mat-table [dataSource]="employees" class="mat-elevation-z8">
+  <!-- Name Role Column -->
+  <ng-container matColumnDef="nameRole">
+
+    <th mat-header-cell *matHeaderCellDef>Name Role</th>
+    <td mat-cell *matCellDef="let element">
+      <ng-container *ngIf="element.role">{{ element.role.name }}</ng-container>
+      <ng-container *ngIf="!element.role">
+        N/A
+      </ng-container>
+    </td>
+  </ng-container>
+
+  <!-- Date Start Column -->
+  <ng-container matColumnDef="dateStart">
+    <th mat-header-cell *matHeaderCellDef>Date Start</th>
+    <td mat-cell *matCellDef="let element">{{ element.dateOfStartingWork | date }}</td>
+  </ng-container>
+
+  <!-- Managerial Position Column -->
+  <ng-container matColumnDef="manager">
+    <th mat-header-cell *matHeaderCellDef>Manager</th>
+    <td mat-cell *matCellDef="let element">{{ element.managerialPosition ? 'Yes' : 'No' }}</td>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="editRoleEmployee(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteRoleEmployee(element)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<button mat-icon-button color="primary" (click)="openAddRoleToEmployeeDialog()"><mat-icon>add</mat-icon></button>

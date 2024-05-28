@@ -1,0 +1,29 @@
+<!-- roles.component.html -->
+
+<mat-dialog-actions class="arrow">
+  <!-- כפתור סגירת הדיאלוג באייקון של חץ מותאם אישית -->
+  <button mat-icon-button class="close-button" (click)="closeDialog()">
+    <i class="fa fa-arrow-left"></i>
+  </button>
+</mat-dialog-actions>
+<h2 mat-dialog-title class="dialog-title">רשימת תפקידים</h2>
+
+<mat-dialog-content>
+  <ng-container *ngIf="roles$ | async as roles; else noRoles">
+    <ul class="roles-list" *ngIf="roles.length > 0; else noRoles">
+      <li class="role-item" *ngFor="let role of roles">
+        <div class="role-icon"><i class="fa fa-user"></i></div>
+        <div class="role-name">{{ role.name }}</div>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #noRoles>
+    <p class="no-roles-message">אין תפקידים לחץ להוספה</p>
+  </ng-template>
+</mat-dialog-content>
+
+<!-- כפתור הוספת תפקיד לרשימת התפקידים הכללית-->
+<mat-dialog-actions class="add-role-button">
+  <button mat-flat-button color="primary" (click)="openNewRoleDialog()">הוספת תפקיד</button>
+</mat-dialog-actions>
+

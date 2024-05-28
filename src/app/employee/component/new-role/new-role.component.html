@@ -1,0 +1,14 @@
+<button mat-icon-button class="close-button" (click)="closeDialog()">
+  <mat-icon>close</mat-icon>
+</button>
+<h2>Add New Role</h2>
+
+<form [formGroup]="roleForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Role Name</mat-label>
+    <input matInput placeholder="Enter role name" formControlName="roleName">
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" class="save-button" (click)="saveRole()"
+    [disabled]="roleForm.invalid">Save</button>
+</form>

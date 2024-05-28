@@ -1,0 +1,12 @@
+<h2 mat-dialog-title class="dialog-title" [@dialogAnimation]="'openClose'">Confirm Deletion</h2>
+<mat-dialog-content class="dialog-content" [@dialogAnimation]="'openClose'">
+  <p class="delete-message">Are you sure you want to delete <span class="employee-name"></span>?</p>
+  <div class="warning-icon">
+    <!-- <i class="fas fa-info-circle"></i> -->
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="dialog-actions" [@dialogAnimation]="'openClose'">
+  <button mat-button color="primary" class="cancel-button" (click)="cancel()">Cancel</button>
+  <button mat-button color="warn" class="delete-button" (click)="deleteRole()">Delete</button>
+</mat-dialog-actions>
+

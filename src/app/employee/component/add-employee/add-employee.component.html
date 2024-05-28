@@ -1,0 +1,84 @@
+<mat-card class="example-card">
+  <form [formGroup]="employeeForm" class="example-form">
+    <p>add new employee</p>
+    <mat-form-field class="example-full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" placeholder="First Name" formControlName="firstName">
+      <mat-hint align="end">Please enter your first name</mat-hint>
+      <mat-error *ngIf="employeeForm.get('firstName')?.invalid">
+        <span *ngIf="employeeForm.get('firstName')?.errors?.['required']">This field is required</span>
+        <span *ngIf="employeeForm.get('firstName')?.errors?.['minlength']">Minimum length is 2 characters</span>
+      </mat-error>
+    </mat-form-field>
+    
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" placeholder="Last Name" formControlName="lastName">
+      <mat-hint align="end">Please enter your last name</mat-hint>
+      <mat-error *ngIf="employeeForm.get('lastName')?.invalid">
+        <span *ngIf="employeeForm.get('lastName')?.errors?.['required']">This field is required</span>
+        <span *ngIf="employeeForm.get('lastName')?.errors?.['minlength']">Minimum length is 2 characters</span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Identity</mat-label>
+      <input matInput type="text" placeholder="Identity" formControlName="identity">
+      <mat-hint align="end">Please enter the ID number (9 digits)</mat-hint>
+      <mat-error *ngIf="employeeForm.get('identity')?.invalid">
+        <span *ngIf="employeeForm.get('identity')?.errors?.['required']">This field is required</span>
+        <span *ngIf="employeeForm.get('identity')?.errors?.['pattern']">Invalid pattern (only 9 digits)</span>
+
+      </mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Birthday</mat-label>
+      <input matInput [matDatepicker]="birthdayPicker" placeholder="Birthday" formControlName="birthday">
+      <mat-datepicker-toggle matSuffix [for]="birthdayPicker"></mat-datepicker-toggle>
+      <mat-datepicker #birthdayPicker></mat-datepicker>
+      <mat-hint align="end">Please select your birthday</mat-hint>
+      <mat-error *ngIf="employeeForm.get('birthday')?.invalid">
+        <span *ngIf="employeeForm.get('birthday')?.errors?.['required']">This field is required</span>
+        <span *ngIf="employeeForm.get('birthday')?.errors?.['underage']">Employee must be 18 years old or older</span>
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Date Start</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Date Start" formControlName="dateStart">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-hint align="end">Please select the start date</mat-hint>
+      <mat-error *ngIf="employeeForm.get('dateStart')?.invalid">
+        <span *ngIf="employeeForm.get('dateStart')?.errors?.['required']">This field is required</span>
+        <span *ngIf="employeeForm.get('dateStart')?.errors?.['tooEarly']">Cannot set work start date before this
+          date</span>
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option [value]="0">Male</mat-option>
+        <mat-option [value]="1">Female</mat-option>
+      </mat-select>
+      <mat-hint align="end">Please select your gender</mat-hint>
+      <mat-error *ngIf="employeeForm.get('gender')?.invalid">
+        <span>שדה זה הוא שדה חובה</span>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button id="save" mat-raised-button color="turquoise" type="submit" (click)="addEmployee()"
+        [disabled]="!employeeForm.valid">Save</button>
+      <button id="Cancel" mat-raised-button color="turquoise" type="button" (click)="close()">Cancel</button>
+    </div>
+
+  </form>
+</mat-card>

@@ -1,0 +1,48 @@
+.mat-select {
+  width: 100%;
+}
+
+.mat-option {
+  padding: 8px 0;
+}
+
+.dialog-title {
+  padding-top: 4%;
+  font-size: 20px;
+  margin: auto;
+}
+
+.dialog-content {
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.btn-group {
+  width: 75%;
+  margin: auto;
+}
+
+.dialog-content {
+  max-height: 500px;
+  overflow-y: auto;
+}

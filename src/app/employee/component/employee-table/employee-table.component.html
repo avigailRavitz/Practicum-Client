@@ -1,0 +1,129 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <img class="logo" src="../../../../assets/לוגו.jpg" alt="Image Description">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-home"></i>
+                    Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav ">
+
+            <li class="nav-item">
+                <button id="exportButton" class="nav-link export-to-excel" (click)="exportToExcel()">
+                    <i class="fa fa-download"></i>
+                    exportToExcel
+                </button>
+            </li>
+            <li class="nav-item">
+                <button id="printButton" class="nav-link export-to-excel" (click)="printTable()">
+                    <i class="fa fa-print"></i>
+                    Print
+                </button>
+            </li>
+            <li class="nav-item">
+                <button id="add-employee-button" class="nav-link export-to-excel" (click)="addNewEmployee()">
+                    <i class="fa fa-user-plus"></i> הוסףעובד
+                </button>
+            </li>
+            <li class="nav-item">
+                <button id="roles-list-button" class="nav-link export-to-excel" (click)="openRolesDialog()">
+                    <i class="fa fa-tasks">
+                        <span class="badge badge-danger">{{ rolesCount }}</span>
+                    </i> רשימת תפקידים
+                </button>
+            </li>
+
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
+                (input)="applyFilter($event)">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+        </form> -->
+        <form class="form-inline my-2 my-lg-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search"
+                    (input)="applyFilter($event)">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+</nav>
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Table with Add and Delete Row Feature</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Employee <b>Details</b></h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="table-wrapper" style="max-height: 500px; overflow-y: auto;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>identity</th>
+                        <th>firstName</th>
+                        <th>lastName</th>
+                        <th>dateStart</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees">
+                        <td>{{ employee.identity }}</td>
+                        <td>{{ employee.firstName }}</td>
+                        <td>{{ employee.lastName }}</td>
+                        <td>{{ employee.dateStart | date }}</td>
+                        <td>
+                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                            <a class="action-btn edit" title="Edit" (click)="editEmployee(employee)"
+                                data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
+                            <a class="action-btn delete" title="Delete" (click)="deleteEmployee(employee)"
+                                data-toggle="tooltip"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

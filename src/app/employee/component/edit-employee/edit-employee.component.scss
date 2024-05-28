@@ -1,0 +1,287 @@
+.a{
+    margin-bottom: 20px;
+}
+.example-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .example-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .container {
+    display: flex;
+  }
+  
+  .form-container {
+    flex: 1;
+    margin-right: 20px; /* Adjust the spacing between the form and the table */
+  }
+  
+  .table-container {
+    flex: 1;
+  }
+  .container {
+    display: flex;
+    align-items: flex-start; /* הטבלה והטופס יתחילו מהקצה העליון של המסך */
+    justify-content: space-between; /* יש המרחק כולל בין הטופס והטבלה */
+  }
+  
+  .form-container,
+  .table-container {
+    flex: 1; /* שני הקומפוננטים יהיו בגובה שווה ויתחילו באותו מקום */
+    height: 100%; /* הגבהים של שני הקומפוננטים יהיו זהים */
+  }
+  
+  .table-container {
+    margin-top: 20px; /* מרווח בין הטבלה לתוכן של הקונטיינר */
+  }
+
+  //save change
+  .button-container button {
+    width: 220px; /* קביעת רוחב קבוע לכל כפתור */
+    color: white;
+    background-color: #00796b; /* רקע בצבע טורקיז */
+    border:#00796b;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .button-container button:disabled {
+    background-color: #ccc; /* רקע לכאשר הכפתור מושבת */
+    color: #666; /* טקסט לכאשר הכפתור מושבת */
+  }
+  
+  .button-container button#save:not(:disabled) {
+    background-color: #fff; /* רקע לבן רק כאשר הכפתור מאופשר */
+    color: #00796b; /* טקסט בצבע טורקיז רק כאשר הכפתור מאופשר */
+  }
+  
+  .button-container button#save:not(:disabled):hover {
+    background-color: #00796b; /* רקע בצבע טורקיז בעת העכבר מעל הכפתור */
+    color: #fff; /* טקסט בצבע לבן בעת העכבר מעל הכפתור */
+  }
+
+  //------------------navbar------------------------
+  //navbar
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  position: relative;
+  width: 36px;
+  font-size: 24px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  font-size: 0.75rem;
+  position: absolute;
+  right: 0;
+  font-family: sans-serif;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  top: 3px;
+  line-height: 12px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  top: -10px;
+}
+
+@media (min-width: 576px) {
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+/* style.css */
+
+/* style.css */
+
+.export-to-excel .fa {
+    font-size: 35px !important; /* הגדלת גודל האיקון עם עקביות */
+  }
+  
+  
+.nav-link.export-to-excel {
+    position: relative;
+    width: 60px;
+    font-size:11px;
+    background-color: transparent;
+    border: none;
+    margin-left: 10px; /* מרווח משמאל */
+    margin-right: 30px; /* מרווח מימין */
+  }
+  
+  .nav-link.export-to-excel > .fa {
+    position: absolute;
+    width: 100%;
+    top: 3px;
+    line-height: 12px;
+    text-align: center;
+  }
+  
+  .nav-link.export-to-excel > .fa > .badge {
+    font-size: 0.75rem;
+    position: absolute;
+    right: 0;
+    font-family: sans-serif;
+    top: -10px;
+  }
+//print
+.export-to-excel .fa {
+    font-size: 35px !important; /* הגדלת גודל האיקון עם עקביות */
+  }
+  
+  .nav-link.export-to-excel {
+    position: relative;
+    width: 60px;
+    font-size: 11px;
+    background-color: transparent;
+    border: none;
+    margin-left: 10px; /* מרווח משמאל */
+    margin-right: 30px; /* מרווח מימין */
+  }
+  
+  .nav-link.export-to-excel > .fa {
+    position: absolute;
+    width: 100%;
+    top: 3px;
+    line-height: 12px;
+    text-align: center;
+  }
+  
+  .nav-link.export-to-excel > .fa > .badge {
+    font-size: 0.75rem;
+    position: absolute;
+    right: 0;
+    font-family: sans-serif;
+    top: -10px;
+  }
+  //הוספת עובד
+  .add-employee-button {
+    position: relative;
+    width: 50px;
+    font-size: 10px;
+    background-color: transparent;
+    border: none;
+    margin-left: 10px; /* מרווח משמאל */
+    margin-right: 30px; /* מרווח מימין */
+}
+
+.add-employee-button > .fa {
+    position: absolute;
+    width: 100%;
+    top: 3px;
+    line-height: 12px;
+    text-align: center;
+}
+
+.add-employee-button > .fa > .badge {
+    font-size: 0.75rem;
+    position: absolute;
+    right: 0;
+    font-family: sans-serif;
+    top: -10px;
+}
+// לוגו  
+.logo {
+  width: 75px;
+  height:75px;
+}
+  

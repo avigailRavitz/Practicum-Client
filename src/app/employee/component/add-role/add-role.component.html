@@ -1,0 +1,41 @@
+<h2 class="dialog-title">Add Position</h2>
+<div class="dialog-content" id="dialog-content">
+  <form [formGroup]="positionForm" class="form">
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Choose Position</mat-label>
+        <mat-select placeholder="Choose Position" formControlName="roleId">
+          <mat-option *ngFor="let position of positionlist" [value]="position.roleId">
+            {{ position.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Is Management</mat-label>
+        <mat-select placeholder="Is Management" formControlName="managerialPosition">
+          <mat-option [value]="true">True</mat-option>
+          <mat-option [value]="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field>
+        <mat-label>Entry Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfStartingWork"
+          placeholder="Choose an entry date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+
+    <div class="dialog-actions">
+      <div class="btn-group" position="group" aria-label="Default button group">
+        <button mat-button color="warn" (click)="close()">Cancel</button>
+        <button mat-raised-button color="primary" (click)="save()" [disabled]="!positionForm.valid">Save</button>
+      </div>
+    </div>

@@ -1,0 +1,169 @@
+/* עיצוב כללי */
+:host {
+  display: block;
+  max-width: 600px;
+  min-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* כותרת */
+.dialog-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
+}
+
+/* רשימת תפקידים */
+.roles-list {
+  margin-top: 20px;
+}
+
+
+
+/* עיצוב רשימת תפקידים */
+.role-item {
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5; /* רקע מחתחת לכל שורה */
+  border-radius: 8px; /* פינות מעוגלות */
+  transition: background-color 0.3s ease; /* אנימציה על שינוי הרקע */
+  width: 100%; /* רוחב התפקיד יהיה 100% של הערך שלו */
+}
+
+
+
+
+
+.role-item:hover {
+  background-color: #e0e0e0; /* רקע מחתחת נוסף בעת מעבר העכבר */
+}
+
+/* אייקון ליד כל תפקיד */
+.role-icon {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;
+  border-radius: 50%;
+}
+
+.role-icon i {
+  color: white;
+}
+
+/* שם התפקיד */
+.role-name {
+  font-size: 20px;
+  color: #333;
+}
+
+/* הסתרת הפסיקים ברשימת התפקידים */
+.roles-list ul {
+  padding: 0;
+}
+
+/* כפתור סגירה */
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-button i {
+  font-size: 24px;
+  color: #333;
+}
+
+.close-button:hover i {
+  color: #007bff;
+}
+
+/* עיצוב כללי של הקומפוננטה */
+.arrow {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  margin-bottom: 20px;
+}
+
+/* אנימציה על הכפתור */
+.arrow button {
+  margin-left: 0; /* זיז את הכפתור כמה שיותר שמאלה */
+  position: absolute;
+  top: 50%;
+  height: 48px;
+  left: 0;
+  transition: transform 0.3s ease; /* אנימציה על התנועה */
+}
+
+.arrow button:hover {
+  transform: translateX(-5px); /* התנועה של הכפתור בעת העברת העכבר עליו */
+}
+
+/* עיצוב כפתור הוספת תפקיד */
+.add-role-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-role-button button {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/* עיצוב עבור הודעת "אין תפקידים" */
+.no-roles-message {
+  font-size: 20px;
+  color: #dc3545;
+  text-align: center;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* גובה הקופסה */
+  background-color: #f8d7da; /* צבע רקע */
+  border: 1px solid #f5c6cb; /* צבע גבול */
+  border-radius: 5px;
+}
+/* כותרת */
+.dialog-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff; /* צבע כחול יפה */
+  margin-top: 0;
+  text-align: center; /* מיקום במרכז */
+  border-bottom: 2px solid #007bff; /* קו תחתון */
+  padding-bottom: 10px;
+}
+
+/* עיצוב כפתור הוספת תפקיד */
+.add-role-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-role-button button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #007bff; /* צבע רקע לכפתור */
+  color: white; /* צבע טקסט */
+  border: none;
+  border-radius: 8px; /* פינות מעוגלות */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה על שינוי הרקע והתנועה */
+  cursor: pointer; /* מצביע על כך שהאלמנט לחיץ */
+}
+
+.add-role-button button:hover {
+  background-color: #0056b3; /* צבע רקע בעת ריחוף */
+  transform: translateY(-2px); /* שינוי מיקום קל בעת ריחוף */
+}

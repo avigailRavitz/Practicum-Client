@@ -1,0 +1,42 @@
+/* עיצוב כותרת */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* עיצוב תיבת טקסט */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* עיצוב הלייבל */
+  mat-label {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* עיצוב הכפתור לסגירת הדיאלוג */
+  button.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.close-button mat-icon {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  button.close-button:hover mat-icon {
+    color: #007bff;
+  }
+  
+  /* עיצוב הכפתור שמירה */
+  button.save-button {
+    font-size: 18px;
+  }
+  
+  
